@@ -1,7 +1,7 @@
-# Šim projektam nav nepieciešamas ārējās Python pakotnes.
-# Tiek izmantotas tikai Python standarta bibliotēkas:
+# Ārējas pakotnes nav vajadzīgas.
+# Projekts izmanto tikai Python standarta bibliotēkas:
 # - random
 # - tkinter
 #
-# Ieteicamā Python versija: 3.9 vai jaunāka,
-# jo piemēros tiek izmantota funkcija random.randbytes().
+# Vēlams lietot Python 3.9 vai jaunāku versiju,
+# jo piemērā par baitiem tiek izmantota random.randbytes() funkcija.

@@ -1,29 +1,53 @@
 # Projekta darba plāns
 
-## 1. Tēmas izvēle
+## 1. Bibliotēkas izvēle
 
-Izvēlēta Python standarta bibliotēka `random`, jo tā ir saprotama, praktiska un nav jāinstalē atsevišķi.
+Sākumā izvēlējos Python standarta bibliotēku `random`, jo tā ir pieejama
+uzreiz pēc Python instalēšanas. Man bija svarīgi izvēlēties bibliotēku,
+kuru var parādīt ar vienkāršiem piemēriem.
 
-## 2. Dokumentācijas izpēte
+## 2. Dokumentācijas apskate
 
-Izmantota oficiālā Python dokumentācija, lai saprastu funkciju nozīmi, parametrus un ierobežojumus.
+Paskatījos Python dokumentācijā, kādas funkcijas ir `random` modulī.
+No saraksta izvēlējos 15 funkcijas. Centos paņemt ne tikai ļoti vienkāršās
+funkcijas, bet arī dažas grūtākas, lai parādītu plašāku izpratni.
 
-## 3. Funkciju atlase
+## 3. Piemēru izveide
 
-Izvēlētas 15 funkcijas, kas parāda dažādas bibliotēkas iespējas: skaitļus, sarakstu izvēli, sarakstu jaukšanu, baitus un statistiskos sadalījumus.
+Katrai funkcijai izveidoju atsevišķu failu mapē `examples`. Katrā failā ir:
 
-## 4. Koda piemēru izveide
+- funkcijas nosaukums;
+- īss paskaidrojums;
+- komentāri latviešu valodā;
+- vienkāršs piemērs;
+- rezultāta izvadīšana ar `print()`.
 
-Katra funkcija ievietota atsevišķā `.py` failā. Katrā failā ir paskaidrojums, komentāri latviešu valodā un izvadīts rezultāts ar `print()`.
+## 4. Galvenā programma
 
-## 5. Programmas izveide
+Pēc tam izveidoju `main.py`, kur lietotājs var izvēlēties piemēru pēc
+numura. Šo daļu veidoju vienkāršu, lai kodu varētu viegli izskaidrot.
 
-Izveidota konsoles programma `main.py`, kur lietotājs var izvēlēties piemēru pēc numura. Papildus izveidota vizuāla programma `gui.py`, lai atbilstu augstākajam vērtējumam par vizuālu vidi.
+## 5. Vizuālā programma
 
-## 6. Dokumentācijas sagatavošana
+Lai projekts būtu pilnīgāks, pievienoju arī `gui.py`. Tajā izmantots
+`tkinter`, kas ir Python standarta bibliotēkā. Lietotājs var izvēlēties
+funkciju sarakstā un nospiest pogu.
 
-Sagatavots `README.md`, `cheat_sheet.md`, `commit_messages.md` un `assessment_checklist.md`, lai skolotājam būtu viegli pārbaudīt projekta atbilstību kritērijiem.
+## 6. Dokumentācija
 
-## 7. Pārbaude
+Uzrakstīju `README.md` un `cheat_sheet.md`. README vairāk paskaidro pašu
+projektu, bet Cheat Sheet ir īss palīgs par `random` funkcijām.
 
-Pārbaudīts, ka Python faili kompilējas un piemēri izpildās bez kļūdām.
+## 7. Ko es varu izskaidrot prezentācijā
+
+- Kāpēc izvēlējos `random`.
+- Kas ir pseido-nejauši skaitļi.
+- Kā strādā `seed()`.
+- Kā atšķiras `choice()`, `choices()` un `sample()`.
+- Kāpēc `random` nevajadzētu izmantot parolēm.
+
+## 8. Pārbaude
+
+Pārbaudīju, ka piemēri palaižas un galvenā programma parāda izvēlni.
+Ja projektu liek GitHub, svarīgi izveidot vairākus commit, nevis visu
+ielikt vienā reizē.

@@ -1,8 +1,8 @@
 """
-Galvenā programma Python bibliotēkas `random` izpētes projektam.
+Galvenā programma manam `random` bibliotēkas projektam.
 
-Šī ir vienkārša konsoles programma ar izvēlni. Lietotājs ievada
-piemēra numuru, un programma palaiž vienu no 15 piemēriem.
+Programma parāda izvēlni. Lietotājs ievada piemēra numuru, un tiek
+palaists attiecīgais fails no mapes `examples`.
 """
 
 import sys
@@ -48,9 +48,9 @@ examples = [
 
 
 def show_menu():
-    """Izvada lietotājam saprotamu izvēlni."""
-    print("\nPython standarta bibliotēkas `random` piemēri")
-    print("------------------------------------------------")
+    """Izdrukā visus pieejamos piemērus."""
+    print("\n`random` bibliotēkas piemēri")
+    print("-----------------------------")
 
     for number, example in enumerate(examples, start=1):
         function_name = example[0]
@@ -60,27 +60,27 @@ def show_menu():
 
 
 def main():
-    """Nodrošina programmas darbību, kamēr lietotājs izvēlas piemērus."""
+    """Ļauj lietotājam izvēlēties un palaist vienu piemēru."""
     while True:
         show_menu()
         choice = input("\nIevadi piemēra numuru: ")
 
         if choice == "0":
-            print("Programma pabeigta. Paldies par izmantošanu!")
+            print("Programma pabeigta.")
             break
 
         if not choice.isdigit():
-            print("Kļūda: lūdzu, ievadi skaitli no 0 līdz 15.")
+            print("Lūdzu, ievadi skaitli no 0 līdz 15.")
             continue
 
         example_number = int(choice)
 
         if 1 <= example_number <= len(examples):
-            print("\n--- Izvēlētais piemērs ---")
+            print("\n--- Rezultāts ---")
             example_function = examples[example_number - 1][1]
             example_function()
         else:
-            print("Kļūda: tāda piemēra nav. Mēģini vēlreiz.")
+            print("Tāda piemēra nav. Mēģini vēlreiz.")
 
 
 if __name__ == "__main__":

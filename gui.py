@@ -1,8 +1,8 @@
 """
-Vizuālā programma Python bibliotēkas `random` izpētes projektam.
+Vienkārša vizuālā programma `random` bibliotēkas piemēriem.
 
-Šis fails izmanto `tkinter`, kas arī ir Python standarta bibliotēkā.
-Programma ļauj izvēlēties piemēru sarakstā un palaist to ar pogu.
+Šeit izmantoju `tkinter`, jo tas jau ir Python standarta bibliotēkā.
+Logā var izvēlēties funkciju un palaist tās piemēru.
 """
 
 import contextlib
@@ -47,17 +47,18 @@ examples = [
 
 
 def run_selected_example():
-    """Palaiž izvēlēto piemēru un parāda rezultātu teksta laukā."""
+    """Palaiž izvēlēto piemēru un izvada rezultātu teksta laukā."""
     selected_index = example_list.current()
 
     if selected_index == -1:
         output_text.delete("1.0", tk.END)
-        output_text.insert(tk.END, "Lūdzu, vispirms izvēlies piemēru.")
+        output_text.insert(tk.END, "Vispirms izvēlies piemēru.")
         return
 
     example_function = examples[selected_index][1]
 
-    # Piemēru faili izmanto print(), tāpēc šeit īslaicīgi saglabājam izdruku.
+    # Piemēru failos rezultāti tiek izvadīti ar print().
+    # Šeit šo izdruku pārtveru, lai varētu parādīt logā.
     text_buffer = io.StringIO()
     with contextlib.redirect_stdout(text_buffer):
         example_function()
@@ -67,12 +68,12 @@ def run_selected_example():
 
 
 root = tk.Tk()
-root.title("Python random bibliotēkas piemēri")
+root.title("Random bibliotēkas piemēri")
 root.geometry("720x460")
 
 title_label = ttk.Label(
     root,
-    text="Python standarta bibliotēka random",
+    text="Python random bibliotēka",
     font=("Segoe UI", 16, "bold"),
 )
 title_label.pack(pady=12)

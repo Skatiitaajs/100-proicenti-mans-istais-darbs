@@ -1,49 +1,69 @@
-# Python bibliotēkas `random` analīzes projekts
+# Python bibliotēkas `random` izpēte
 
 ## Projekta mērķis
 
-Šī projekta mērķis ir izpētīt Python standarta bibliotēkas moduli `random`, izveidot saprotamu Cheat Sheet un praktiski parādīt 15 bibliotēkas funkciju izmantošanu atsevišķos Python failos.
+Šajā darbā es izpētīju Python standarta bibliotēkas moduli `random`.
+Mērķis bija saprast, kā Python var veidot nejaušus skaitļus, izvēlēties
+nejaušus elementus no saraksta un izmantot to vienkāršās programmās.
 
-## Izvēlētās bibliotēkas pamatojums
+Projektā ir:
 
-Es izvēlējos `random`, jo tā ir Python standarta bibliotēka un nav jāinstalē ar ārējām pakotnēm. Tā ir piemērota 11. klases līmenim, jo ar īsiem piemēriem var saprast nejaušu skaitļu ģenerēšanu, izlozes, sarakstu sajaukšanu un vienkāršas simulācijas.
+- īss bibliotēkas skaidrojums;
+- Cheat Sheet ar 15 funkcijām;
+- katrai funkcijai savs `.py` fails;
+- konsoles programma ar izvēlni;
+- vienkārša vizuālā programma ar `tkinter`.
 
-## Bibliotēkas arhitektūras kopsavilkums
+## Kāpēc izvēlējos `random`
 
-`random` ir standarta bibliotēkas modulis, kas izmanto pseido-nejaušo skaitļu ģeneratoru. Tas nozīmē, ka rezultāti izskatās nejauši, bet tos aprēķina algoritms. Ar `seed()` var iestatīt sākuma vērtību, lai rezultātus atkārtotu. Funkcijas var iedalīt vairākās grupās: skaitļu ģenerēšana, izvēle no sarakstiem, sarakstu jaukšana, baitu ģenerēšana un statistiskie sadalījumi.
+Es izvēlējos `random`, jo tā ir iekļauta pašā Python un nav jāinstalē
+papildu bibliotēkas. Man šī bibliotēka šķita piemērota, jo tās piemērus
+var viegli saprast: metamais kauliņš, izloze, skolēna izvēle no saraksta,
+kāršu sajaukšana un līdzīgas situācijas.
 
-## Funkciju saraksts
+Vēl viens iemesls ir tas, ka `random` labi parāda, ka programmēšanā var
+veidot arī mazus eksperimentus un simulācijas, ne tikai aprēķinus pēc
+vienas formulas.
 
-1. `random.seed()` - iestata nejaušo skaitļu ģeneratora sākuma vērtību.
-2. `random.random()` - iegūst decimālskaitli no 0.0 līdz 1.0.
-3. `random.randint()` - iegūst veselu skaitli starp divām robežām.
+## Īsi par bibliotēkas uzbūvi
+
+`random` ir Python standarta bibliotēkas modulis. Tas izmanto
+pseido-nejaušu skaitļu ģeneratoru. Tas nozīmē, ka rezultāti izskatās
+nejauši, bet tos izveido algoritms.
+
+Svarīga funkcija ir `seed()`. Ar to var iestatīt sākuma vērtību, lai
+programma atkārtoti dotu tos pašus rezultātus. Tas ir noderīgi, ja
+piemērs jāpārbauda vai jāparāda skolotājam.
+
+## Izmantotās funkcijas
+
+1. `random.seed()` - iestata sākuma vērtību nejaušajam ģeneratoram.
+2. `random.random()` - izveido decimālskaitli no 0.0 līdz 1.0.
+3. `random.randint()` - izveido veselu skaitli starp divām robežām.
 4. `random.randrange()` - izvēlas skaitli no `range()` intervāla.
 5. `random.choice()` - izvēlas vienu elementu no saraksta.
-6. `random.choices()` - izvēlas vairākus elementus ar atkārtošanos.
-7. `random.shuffle()` - sajauc saraksta elementu secību.
-8. `random.sample()` - izvēlas unikālus elementus bez atkārtošanās.
-9. `random.uniform()` - iegūst decimālskaitli starp divām robežām.
-10. `random.triangular()` - ģenerē vērtību ar biežāku rezultātu pie tipiskās vērtības.
-11. `random.gauss()` - ģenerē skaitli pēc Gausa sadalījuma.
-12. `random.normalvariate()` - ģenerē skaitli pēc normālā sadalījuma.
-13. `random.getrandbits()` - ģenerē veselu skaitli ar noteiktu bitu skaitu.
-14. `random.randbytes()` - ģenerē noteiktu skaitu nejaušu baitu.
-15. `random.betavariate()` - ģenerē proporciju no 0 līdz 1.
+6. `random.choices()` - izvēlas vairākus elementus, atļaujot atkārtošanos.
+7. `random.shuffle()` - sajauc saraksta elementus.
+8. `random.sample()` - izvēlas vairākus unikālus elementus.
+9. `random.uniform()` - izveido decimālskaitli starp divām robežām.
+10. `random.triangular()` - izveido skaitli, kas biežāk ir ap tipisko vērtību.
+11. `random.gauss()` - izmanto Gausa jeb normālo sadalījumu.
+12. `random.normalvariate()` - arī izmanto normālo sadalījumu.
+13. `random.getrandbits()` - izveido nejaušu skaitli no bitiem.
+14. `random.randbytes()` - izveido nejaušus baitus.
+15. `random.betavariate()` - izveido skaitli no 0 līdz 1, piemēram, proporcijai.
 
 ## Projekta struktūra
 
 ```text
-python-library-project/
+100% mans īstais darbs/
 ├── .gitignore
 ├── README.md
 ├── main.py
 ├── gui.py
 ├── cheat_sheet.md
-├── requirements.txt
-├── commit_messages.md
-├── github_setup.md
 ├── project_plan.md
-├── assessment_checklist.md
+├── requirements.txt
 └── examples/
     ├── __init__.py
     ├── function_01.py
@@ -63,59 +83,65 @@ python-library-project/
     └── function_15.py
 ```
 
-## Kā palaist programmu
+## Kā palaist
 
-Konsoles versija:
+Konsoles programmu var palaist ar komandu:
 
 ```bash
 python main.py
 ```
 
-Vizuālā versija ar `tkinter`:
+Tad jāievada funkcijas numurs no 1 līdz 15.
+
+Vizuālo programmu var palaist ar komandu:
 
 ```bash
 python gui.py
 ```
 
-Atsevišķu piemēru var palaist arī šādi:
+Atsevišķu piemēru var palaist arī tieši, piemēram:
 
 ```bash
 python examples/function_03.py
 ```
 
-## Izmantotās saites
+## Izmantotie avoti
 
-- Python standarta bibliotēkas saraksts: https://docs.python.org/3/library/index.html
-- Python `random` dokumentācija: https://docs.python.org/3/library/random.html
+- Python standarta bibliotēka: https://docs.python.org/3/library/index.html
+- `random` dokumentācija: https://docs.python.org/3/library/random.html
 - Uzdevumā dotā populāro bibliotēku saite: https://www.geeksforgeeks.org/blogs/python-libraries-to-know/
 
 ## Ieguvumi
 
-- `random` ir iekļauts Python standarta bibliotēkā.
-- To ir viegli lietot nelielos piemēros.
-- Bibliotēka ir praktiska spēlēm, izlozēm, testiem un simulācijām.
-- Ar `seed()` var atkārtot vienādus rezultātus, kas palīdz pārbaudē un mācībās.
-- Projekts satur gan konsoles programmu, gan vizuālu `tkinter` programmu.
+- Bibliotēka jau ir Python sastāvā.
+- Funkcijas ir īsas un salīdzinoši viegli saprotamas.
+- To var izmantot spēlēs, izlozēs, testos un vienkāršās simulācijās.
+- Ar `seed()` var iegūt atkārtojamus rezultātus, kas ir ērti mācību darbā.
+- Piemērus var palaist gan konsolē, gan vizuālā logā.
 
 ## Ierobežojumi
 
-- `random` nav paredzēts drošībai, piemēram, paroļu vai slepenu tokenu ģenerēšanai.
-- Rezultāti ir pseido-nejauši, jo tos veido algoritms.
-- Dažas funkcijas, piemēram, `gauss()` un `betavariate()`, ir saistītas ar statistiku un var prasīt papildu skaidrojumu.
-- Vizuālā programma ir vienkārša mācību vajadzībām, nevis pilna profesionāla lietotne.
+- `random` nav domāts drošām parolēm vai slepeniem kodiem.
+- Rezultāti nav pilnīgi nejauši, jo tos aprēķina algoritms.
+- Dažas funkcijas ir saistītas ar statistiku, tāpēc tās sākumā var būt grūtāk saprast.
+- Ja visur lieto vienādu `seed()`, rezultāti kļūst paredzami.
 
-## Pašvērtējums pēc kritērijiem
+## Pašvērtējums
 
-Projekts atbilst maksimālā vērtējuma prasībām, jo tajā ir jēgpilni aprakstītas 15 `random` funkcijas, katrai funkcijai ir savs `.py` fails ar komentāriem latviešu valodā, ir izveidota konsoles programma un vizuāla `tkinter` programma piemēru palaišanai. README un Cheat Sheet skaidro bibliotēkas izvēli, arhitektūru, funkcijas, ieguvumus un ierobežojumus. Faili ir sakārtoti tā, lai tos varētu ievietot GitHub repozitorijā ar vairākiem saprotamiem commit ziņojumiem.
+Manuprāt, projekts atbilst uzdevuma prasībām, jo ir aprakstītas 15
+funkcijas un katrai ir savs piemēra fails. Komentārus rakstīju tā, lai
+varētu pats izskaidrot, ko dara katra rinda. `main.py` ļauj izvēlēties
+piemēru pēc numura, bet `gui.py` dod vienkāršu vizuālo variantu.
 
-## Ieteicamie GitHub commit ziņojumi
+Grūtākā daļa bija izskaidrot tās funkcijas, kas saistītas ar sadalījumiem,
+piemēram, `gauss()` un `betavariate()`. Tāpēc piemēros centos izmantot
+ikdienišķas situācijas, piemēram, vērtējumu, augumu vai darba progresu.
 
-1. `Izveido projekta pamatstruktūru`
-2. `Pievieno random bibliotēkas funkciju piemērus`
-3. `Izveido konsoles izvēlnes programmu`
+## Ieteicamie commit nosaukumi
+
+1. `Izveido projekta sākuma failus`
+2. `Pievieno random funkciju piemērus`
+3. `Izveido konsoles izvēlni`
 4. `Pievieno tkinter vizuālo programmu`
-5. `Pievieno random bibliotēkas cheat sheet`
-6. `Papildina README ar kritērijiem un secinājumiem`
-7. `Pievieno projekta plānu un pašpārbaudi`
-
-Detalizēti GitHub augšupielādes soļi atrodami failā `github_setup.md`.
+5. `Uzraksta cheat sheet un projekta aprakstu`
+6. `Sakārto komentārus un README failu`
