@@ -9,6 +9,7 @@ Piemēram, 8 biti var veidot skaitli no 0 līdz 255.
 import random
 import sys
 
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 

@@ -9,6 +9,7 @@ Skaitlis var būt 0.0, bet tas nevar būt tieši 1.0.
 import random
 import sys
 
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
@@ -23,7 +24,7 @@ def run_example():
     # Ģenerējam nejaušu decimālskaitli.
     random_number = random.random()
 
-    # round() izmantojam tikai tāpēc, lai rezultāts būtu īsāks un lasāmāks.
+    # round() izmantojam tikai tāpēc, lai rezultāts būtu īsāks.
     print("Nejaušais skaitlis:", round(random_number, 4))
 
 

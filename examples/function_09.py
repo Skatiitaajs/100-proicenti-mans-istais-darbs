@@ -3,11 +3,12 @@ Funkcija: random.uniform()
 
 Īss paskaidrojums:
 `uniform(a, b)` atgriež nejaušu decimālskaitli starp a un b.
-To var izmantot, ja vajag nejaušu temperatūru, cenu, attālumu u.c.
+To var izmantot, ja vajag nejaušu temperatūru, cenu vai attālumu.
 """
 
 import random
 import sys
+
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")

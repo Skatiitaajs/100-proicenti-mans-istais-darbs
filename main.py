@@ -1,14 +1,11 @@
 """
-Galvena programma Python bibliotēkas `random` izpētes projektam.
+Galvenā programma Python bibliotēkas `random` izpētes projektam.
 
-Lietotājs izvēlas vienu no 15 piemēriem, un programma izsauc
-attiecīgā faila `run_example()` funkciju.
+Šī ir vienkārša konsoles programma ar izvēlni. Lietotājs ievada
+piemēra numuru, un programma palaiž vienu no 15 piemēriem.
 """
 
 import sys
-
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8")
 
 from examples import function_01
 from examples import function_02
@@ -25,6 +22,10 @@ from examples import function_12
 from examples import function_13
 from examples import function_14
 from examples import function_15
+
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 
 examples = [
@@ -47,16 +48,19 @@ examples = [
 
 
 def show_menu():
-    """Izvada izvēlni ar visiem pieejamajiem piemēriem."""
-    print("\nPython bibliotēkas `random` piemēri")
-    print("-----------------------------------")
+    """Izvada lietotājam saprotamu izvēlni."""
+    print("\nPython standarta bibliotēkas `random` piemēri")
+    print("------------------------------------------------")
+
     for number, example in enumerate(examples, start=1):
-        print(f"{number}. {example[0]}")
+        function_name = example[0]
+        print(f"{number}. {function_name}")
+
     print("0. Beigt programmu")
 
 
 def main():
-    """Galvenais programmas cikls."""
+    """Nodrošina programmas darbību, kamēr lietotājs izvēlas piemērus."""
     while True:
         show_menu()
         choice = input("\nIevadi piemēra numuru: ")
@@ -66,7 +70,7 @@ def main():
             break
 
         if not choice.isdigit():
-            print("Lūdzu, ievadi skaitli no 0 līdz 15.")
+            print("Kļūda: lūdzu, ievadi skaitli no 0 līdz 15.")
             continue
 
         example_number = int(choice)
@@ -76,7 +80,7 @@ def main():
             example_function = examples[example_number - 1][1]
             example_function()
         else:
-            print("Tāda piemēra nav. Mēģini vēlreiz.")
+            print("Kļūda: tāda piemēra nav. Mēģini vēlreiz.")
 
 
 if __name__ == "__main__":

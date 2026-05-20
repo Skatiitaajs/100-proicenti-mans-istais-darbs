@@ -9,6 +9,7 @@ Praktiski to var izmantot līdzīgi kā gauss(), piemēram, simulācijām.
 import random
 import sys
 
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 

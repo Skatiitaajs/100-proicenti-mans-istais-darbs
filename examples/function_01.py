@@ -4,11 +4,12 @@ Funkcija: random.seed()
 Īss paskaidrojums:
 `seed()` iestata nejaušo skaitļu ģeneratora sākuma vērtību.
 Ja izmanto vienādu sākuma vērtību, Python izveido vienādu nejaušo
-skaitļu secību. Tas ir noderīgi, ja gribam piemēru atkārtot un pārbaudīt.
+skaitļu secību. Tas ir noderīgi, ja piemēru vajag atkārtot.
 """
 
 import random
 import sys
+
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")

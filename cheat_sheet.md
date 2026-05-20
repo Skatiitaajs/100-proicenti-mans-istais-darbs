@@ -16,20 +16,20 @@
 - Vienkāršās simulācijās, piemēram, temperatūras vai ceļa laika modelēšanai.
 - Testēšanā, ja vajag ģenerēt dažādus piemēra datus.
 
-## Īsa arhitektūra
+## Bibliotēkas arhitektūra vienkāršā valodā
 
-- `random` ir modulis no Python standarta bibliotēkas, tāpēc tas nav jāinstalē atsevišķi.
-- Moduļa pamatā ir pseido-nejaušo skaitļu ģenerators. Tas nozīmē, ka skaitļi izskatās nejauši, bet tos veido algoritms.
+- `random` ir viens modulis Python standarta bibliotēkā, tāpēc tas nav jāinstalē atsevišķi.
+- Moduļa pamatā ir pseido-nejaušo skaitļu ģenerators. Tas nozīmē, ka rezultāti izskatās nejauši, bet tos veido algoritms.
 - Daudzas funkcijas izmanto kopīgu iekšējo ģeneratoru.
 - `seed()` ļauj iestatīt sākuma vērtību, lai rezultātus varētu atkārtot.
-- Funkcijas var iedalīt grupās: skaitļi, secības, baiti un sadalījumi.
-- Drošības vajadzībām, piemēram, paroļu vai tokenu ģenerēšanai, jāizmanto `secrets`, nevis `random`.
+- Funkcijas var iedalīt grupās: skaitļu ģenerēšana, izvēle no secībām, sarakstu jaukšana, baitu ģenerēšana un statistiskie sadalījumi.
+- Drošības vajadzībām, piemēram, paroļu vai slepenu tokenu ģenerēšanai, jāizmanto `secrets`, nevis `random`.
 
 ## 15 izvēlētās funkcijas
 
 ### 1. `random.seed()`
 
-Iestata sākuma vērtību nejaušo skaitļu ģeneratoram.
+Iestata sākuma vērtību nejaušo skaitļu ģeneratoram. Tas palīdz atkārtot vienus un tos pašus rezultātus.
 
 ```python
 import random
@@ -62,7 +62,7 @@ print(dice)
 
 ### 4. `random.randrange()`
 
-Izvēlas nejaušu skaitli no `range()` intervāla.
+Izvēlas nejaušu skaitli no `range()` intervāla. Beigu robeža nav iekļauta.
 
 ```python
 import random
@@ -73,7 +73,7 @@ print(even_number)
 
 ### 5. `random.choice()`
 
-Izvēlas vienu nejaušu elementu no saraksta vai citas secības.
+Izvēlas vienu nejaušu elementu no saraksta, teksta virknes vai citas secības.
 
 ```python
 import random
@@ -84,7 +84,7 @@ print(random.choice(students))  # Izvēlas vienu skolēnu
 
 ### 6. `random.choices()`
 
-Izvēlas vairākus elementus, un elementi var atkārtoties.
+Izvēlas vairākus elementus, un elementi var atkārtoties. Ar `weights` var norādīt izvēles iespējamību.
 
 ```python
 import random
@@ -96,7 +96,7 @@ print(result)
 
 ### 7. `random.shuffle()`
 
-Sajauc saraksta elementus nejaušā secībā.
+Sajauc saraksta elementus nejaušā secībā. Funkcija maina pašu sarakstu.
 
 ```python
 import random
@@ -153,7 +153,7 @@ print(round(grade, 1))
 
 ### 12. `random.normalvariate()`
 
-Arī ģenerē skaitli pēc normālā sadalījuma.
+Arī ģenerē skaitli pēc normālā sadalījuma un ir noderīga simulācijām.
 
 ```python
 import random
@@ -188,7 +188,7 @@ print(data.hex())
 
 ### 15. `random.betavariate()`
 
-Atgriež skaitli no 0 līdz 1, ko var izmantot proporcijām.
+Atgriež skaitli no 0 līdz 1, ko var izmantot proporcijām vai procentiem.
 
 ```python
 import random
@@ -213,4 +213,4 @@ print(round(progress * 100, 1), "%")
 
 ## Secinājums
 
-`random` ir ļoti piemērota bibliotēka 11. klases projektam, jo tā ir viegli uzstādāma, praktiska un saprotama. Tā labi parāda, kā programmās izmantot nejaušību, bet vienlaikus iemāca svarīgu ierobežojumu: pseido-nejaušus skaitļus nedrīkst izmantot drošības uzdevumiem.
+`random` ir ļoti piemērota bibliotēka 11. klases projektam, jo tā ir viegli pieejama, praktiska un saprotama. Tā labi parāda, kā programmās izmantot nejaušību, bet vienlaikus iemāca svarīgu ierobežojumu: pseido-nejaušus skaitļus nedrīkst izmantot drošības uzdevumiem.

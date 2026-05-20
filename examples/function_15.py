@@ -9,6 +9,7 @@ To var izmantot proporciju vai procentu simulācijām.
 import random
 import sys
 
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 

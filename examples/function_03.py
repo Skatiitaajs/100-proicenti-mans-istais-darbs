@@ -9,6 +9,7 @@ Abas robežas ir iekļautas, piemēram, randint(1, 6) var dot arī 1 un 6.
 import random
 import sys
 
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 

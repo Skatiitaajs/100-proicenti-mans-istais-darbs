@@ -9,6 +9,7 @@ Tas nozīmē, ka viens un tas pats elements netiek izvēlēts divreiz.
 import random
 import sys
 
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
